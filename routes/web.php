@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\DvdTitle;
+use App\Http\Controllers\DvdController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +14,5 @@ use App\Models\DvdTitle;
 |
 */
 
-Route::get('/', function () {
-    // $dvdTitles = DvdTitle::take(10)->get();
-    $dvdTitles = DvdTitle::with('genre', 'rating')->take(10)->get();
+Route::get('/', [DvdController::class, 'index']);
 
-    return view('index', [
-        'dvds' => $dvdTitles
-    ]);
-});
