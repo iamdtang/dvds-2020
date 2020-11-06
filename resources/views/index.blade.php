@@ -19,11 +19,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                @foreach ($dvds as $dvd)
+                    <tr>
+                        <td>{{$dvd->title}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
