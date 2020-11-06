@@ -15,7 +15,8 @@ use App\Models\DvdTitle;
 */
 
 Route::get('/', function () {
-    $dvdTitles = DvdTitle::all();
+    // $dvdTitles = DvdTitle::take(10)->get();
+    $dvdTitles = DvdTitle::with('genre', 'rating')->take(10)->get();
 
     return view('index', [
         'dvds' => $dvdTitles
