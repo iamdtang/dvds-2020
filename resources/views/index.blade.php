@@ -21,7 +21,9 @@
             <tbody>
                 @foreach ($dvds as $dvd)
                     <tr>
-                        <td>{{$dvd->title}}</td>
+                        <td>
+                            <a href="/dvds/{{$dvd->id}}">{{$dvd->title}}</a>
+                        </td>
                         <td>{{$dvd->genre->name}}</td>
                         <td>{{$dvd->rating->name}}</td>
                     </tr>

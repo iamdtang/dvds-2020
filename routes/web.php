@@ -15,4 +15,4 @@ use App\Http\Controllers\DvdController;
 */
 
 Route::get('/', [DvdController::class, 'index']);
-
+Route::get('/dvds/{id}', [DvdController::class, 'show']);
