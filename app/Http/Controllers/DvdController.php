@@ -15,4 +15,11 @@ class DvdController extends Controller
             'dvds' => $dvdTitles
         ]);
     }
+
+    public function show($id)
+    {
+        return view('dvds.show', [
+            'dvd' => DvdTitle::find($id)
+        ]);
+    }
 }
