@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\DvdTitle;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $dvdTitles = DvdTitle::all();
+
+    return view('index', [
+        'dvds' => $dvdTitles
+    ]);
 });
